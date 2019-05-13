@@ -8,3 +8,5 @@
 build/
 
 .flutter-plugins
+.gradle/5.1.1/vcsMetadata-1/
+ios/Frameworks/
