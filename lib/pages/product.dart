@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ProductPage extends StatelessWidget {
+  final String title;
+  final String imageUrl;
+
+  ProductPage({this.title, this.imageUrl});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -11,18 +16,29 @@ class ProductPage extends StatelessWidget {
         accentColor: Colors.deepPurple,
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text('Product page')),
+        appBar: AppBar(title: Text(title)),
         body: Center(
           child: Container(
-            margin: EdgeInsets.fromLTRB(0, 50.0, 0, 0),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Text('This is this is product page'),
-                RaisedButton(
-                  child: Text('Go Back'),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
+                Image.asset(imageUrl),
+                Container(
+                  padding: EdgeInsets.all(10.0),
+                  child: Text('This is this is product page'),
+                ),
+                Container(
+                  padding: EdgeInsets.all(10.0),
+                  child: RaisedButton(
+                    color: Theme.of(context).accentColor,
+                    child: Text(
+                      'Delete',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context, true);
+                    },
+                  ),
                 ),
               ],
             ),

@@ -9,10 +9,14 @@ class ProductControl extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return RaisedButton(
-        color: Theme.of(context).accentColor,
-        onPressed: () {
-          addProduct('Sweet Tester');
-        },
-        child: Text('Add Product'));
+      color: Theme.of(context).accentColor,
+      onPressed: () {
+        addProduct({'title': 'Chocolate', 'imageUrl': 'assets/food.jpg'});
+      },
+      child: Text(
+        'Add Product',
+        style: TextStyle(color: Colors.white),
+      ),
+    );
   }
 }
